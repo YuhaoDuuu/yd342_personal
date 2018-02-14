@@ -157,7 +157,12 @@ When making tables, it's not important that the lines match up. For example, the
 
 1. Create a table listing your 3 favorite animals, foods, books, and places on campus. Try out the different cell justifications:
 
-<!--- Fill you answer here. --->
+| Fav animals | Fav foods |   Fav books  |
+|:---------- |:----------: | ---: |
+| pig   | rice   |   *hydrology: the intro*  |
+| dog           |   noodle         |   *think python*  |
+| cat           |      cookie      |  *the bible*   |
+
 
 
 
@@ -176,12 +181,27 @@ For larger code blocks where you report multiple lines of code, you always start
 
 1. Below, write a Python print function with a different string using syntax highlighting:
 
-<!--- Fill you answer here. --->
+`print('hello! world')`
+
 
 2. Now write a block of Python code for that same print statement:
 
-<!--- Fill you answer here. --->
+```python
+for i in range(1,864):
+        storage[i] = storage[i-1] +inflow_array[i]- 1200- spillage[i]
 
+        if 0<storage[i]<capacity:
+            spillage[i]=0
+
+        elif storage[i]>capacity:
+            storage[i] = capacity
+
+        elif storage[i]<0:
+            storage[i]=0
+            failure = failure+1
+            storage[i]
+            reliability = 1- failure/864
+```
 
 
 ## LaTeX Equations
