@@ -56,7 +56,10 @@ There are several different ways to emphasize text: *italics*, **bold**, ***comb
 
 1. Write 4 of your favorite words using each type of emphasis:
 
-<!--- Fill you answer here. --->
+*I*
+**am**
+***Yuhao***
+~~Du~~
 
 
 ## Lists
@@ -68,7 +71,14 @@ Lists are very easy to do. For a bulleted list, use the asterisk and for a numbe
 
 1. Now try it out for yourself. Write down a list of things you hope to achieve this semester, and elaborate on them with sub items:
 
-<!--- Fill you answer here. --->
+# semester goal
+1. research
+  - finish two essay
+    - 25 pages for AEM6600, 10 pages for AC
+2. excercise
+  - stick to the schedule
+    - 4 times a week
+
 
 ## Images
 To input images, you'll either need an image URL or a file path to your image. For AguaClara work, your repository should have a folder for images where you can get an image URL or file path from. In this tutorial, I've made an image folder with a picture in the `aguaclara_tutorial` repository.
@@ -101,6 +111,9 @@ Image with Height and Width Adjusted:
 1. Make an images folder in your personal repository, and import an image of your hometown or pet from that folder. Do it unformatted using the image URL and the relative file path method, then do it again but instead change the height and width of your image:
 
 <!--- Fill you answer here. --->
+![Hometown_LOL](https://github.com/YuhaoDuuu/yd342_personal/blob/master/Images/IMG_1301.JPG?raw=true)
+![Hometown_LOL](/Images/IMG_1301.JPG)
+<img src="https://github.com/YuhaoDuuu/yd342_personal/blob/master/Images/IMG_1301.JPG?raw=true" height=200 width=100>
 
 
 
@@ -113,7 +126,8 @@ To insert a link, all you have to do is enclose your linked text in `[]` followe
 
 1. Below, write a sentence describing your major, and insert a link to your major's department website.
 
-<!--- Fill you answer here. --->
+Major in CEE, dealing with environmental issue.
+[Cornell CEE](http://www.cee.cornell.edu)
 
 ## Tables
 Tables in Markdown are slightly harder, but there's an automatic function that allows to you make one easily. When working in a `.md` file, all you have to do is type `table` and hit enter. It will initialize a 2 by 2 table, but you can easily increase the width by going to the last column and hitting `Tab` or it's height by clicking in any cell and hitting `Enter`. Notice in the example how the text below the header is justified left, center, and right. This is due to the line below the header. A line with a colon on the far left of the dashes only indicates left justified, colons on both sides of the dashes indicates centered, and a colon on the far right of the dashes indicates right justified.
