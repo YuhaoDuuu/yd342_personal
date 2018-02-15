@@ -310,7 +310,10 @@ from scipy.constants import Boltzmann as kB_sc # I've imported the unitless valu
 
 kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
 
-# Write your code here
+def dif_co(temp_k,radius_m):
+  viscos = pc.viscosity_dynamic(temp_k)
+  D = kb * temp_k / (6*np.pi*radius_m*viscos)
+  return D
 
 ```
 
