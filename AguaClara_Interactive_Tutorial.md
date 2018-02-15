@@ -247,15 +247,27 @@ These questions are meant to test what you've learned from the Python Basics tut
 
 1. Write a conditional statement with 3 conditions: when x is 10, when x is 1, and when x is anything other than 1 or 10. For each condition, have your code print what the value is or isn't.
 
-<!--- Fill you answer here. --->
+```python
+x = 13
+if x ==10:
+  print("x=10")
+elif x ==1:
+  print("x=1")
+else:
+  print("idk")
+```
+
 
 
 
 
 2. Write a `for` loop that takes a variable with an initial value of 0, and adds the current index to the previous value of that variable (i.e. you variable should grow in size every iteration). Perform the iteration 20 times, and have the final value be printed at the end.
 
-<!--- Fill you answer here. --->
-
+```python
+for i in range(0,20):
+  x = x+i
+print(x)
+```
 
 
 
@@ -266,8 +278,11 @@ These questions are meant to test what you've learned from the Python Basics tut
 
 3. Using the NumPy package, calculate the value of sin(4), and use the sigfig function from the utility module in aide_design to get your answer to 3 sig-figs. *(Hint: You will need to import these packages. Remember how to do that?)*
 
-<!--- Fill you answer here. --->
-
+```python
+import numpy as np
+sin4 = np.sin(4)
+print(ut.sig(sin4,3))
+```
 
 
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
@@ -301,8 +316,17 @@ kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can us
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save your plot to your images folder in your personal repository, and display it below using `plt.show()` and an image insertion using a relative file path to the image.
 
-<!--- Fill you answer here. --->
-
+```python
+T_array = np.arange(0,200)*u.degC
+r = 0.2*u.m
+q = 2 *(u.m**3/u.s)
+rho_array = pc.viscosity_kinematic(T_array)
+plt.plot(T_array,rho_array)
+plt.title("T-Re plot")
+plt.xlabel("T,K")
+plt.ylabel("Re")
+plt.show()
+```
 # Teletype Basics
 In this section you and your team can practice using Teletype together.
 
