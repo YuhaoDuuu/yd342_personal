@@ -44,7 +44,7 @@ To signify a header, use `#`. The more `#` you use, the smaller the header gets.
 
 1. Make a header of similar size as Header 3 with whatever text you want:
 
-<!--- Fill you answer here. --->
+### Same size as header 3
 
 ## Emphasis
 There are several different ways to emphasize text: *italics*, **bold**, ***combined***, and ~~strikethrough~~.
@@ -211,7 +211,7 @@ $$ Re_D = \frac{uD}{\nu} $$
 
 1. Try it on your own! Write your favorite equation using LaTeX source code and toggle the LaTeX preview to see it formatted:
 
-<!--- Fill you answer here. --->
+$$ x=\frac{1+y}{1+2z^2} $$
 
 
 # Using Python and Running it With Hydrogen in Markdown
