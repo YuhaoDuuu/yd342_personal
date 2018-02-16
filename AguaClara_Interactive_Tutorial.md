@@ -341,7 +341,7 @@ plt.ylabel("Re")
 plt.savefig("/Users/duyuhao/Documents/GitHub/yd342_personal/Images/Images")
 plt.show()
 ```
-![plot](//Images/Images.png)
+![plot](/Images/Images.png)
 
 # Teletype Basics
 In this section you and your team can practice using Teletype together.
