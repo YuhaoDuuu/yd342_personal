@@ -287,7 +287,17 @@ print(ut.sig(sin4,3))
 
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
 
-<!--- Fill you answer here. --->
+```python
+from aide_design.play import*
+
+List = [0, 1, 2, 3,4]
+Array = np.array(List)
+len(List)
+Array_2 = np.array([[0, 1, 2, 3,4], [ 1, 2, 3,4,5], [2, 3,4,5,6],[ 3,4,5,6,7],[4,5,6,7,8]])
+Array_2[:,1]
+Array_2[1,:]
+np.size(Array_2)
+```
 
 
 
@@ -331,6 +341,8 @@ plt.ylabel("Re")
 plt.savefig("/Users/duyuhao/Documents/GitHub/yd342_personal/Images")
 plt.show()
 ```
+![plot](/Users/duyuhao/Documents/GitHub/yd342_personal/Images.png)
+
 # Teletype Basics
 In this section you and your team can practice using Teletype together.
 
