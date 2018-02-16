@@ -338,10 +338,10 @@ plt.plot(T_array,rho_array)
 plt.title("T-Re plot")
 plt.xlabel("T,K")
 plt.ylabel("Re")
-plt.savefig("/Users/duyuhao/Documents/GitHub/yd342_personal/Images")
+plt.savefig("/Users/duyuhao/Documents/GitHub/yd342_personal/Images/Images")
 plt.show()
 ```
-![plot](/Users/duyuhao/Documents/GitHub/yd342_personal/Images.png)
+![plot](//Images/Images.png)
 
 # Teletype Basics
 In this section you and your team can practice using Teletype together.
