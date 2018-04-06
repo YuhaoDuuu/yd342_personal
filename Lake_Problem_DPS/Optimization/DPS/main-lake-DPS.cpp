@@ -1,10 +1,10 @@
 /* main-lake_DPS.cpp
-   
+
   Riddhi Singh, May, 2014
   The Pennsylvania State University
   rus197@psu.edu
 
-  Adapted by Tori Ward, July 2014 
+  Adapted by Tori Ward, July 2014
   Cornell University
   vlw27@cornell.edu
 
@@ -18,7 +18,7 @@
   A multi-objective represention of the lake model from Carpenter et al., 1999
   This simulation is designed for optimization with either Borg or the MOEAFramework.
 
-  Stochasticity is introduced by natural phosphorous inflows. 
+  Stochasticity is introduced by natural phosphorous inflows.
   These follow a lognormal distribution with specified mu and sigma.
 
   Decision variable
@@ -87,7 +87,7 @@ ublas::vector<double> C(nvars/3);
 ublas::vector<double> R(nvars/3);
 ublas::vector<double> W(nvars/3);
 
-void lake_problem(double* vars, double* objs, double* constrs) 
+void lake_problem(double* vars, double* objs, double* constrs)
 {
   // determine centers, radii and weights of RBFs
   for (int i = 0; i < (nvars/3); i++){
@@ -132,7 +132,7 @@ void lake_problem(double* vars, double* objs, double* constrs)
     // get the random natural flow from the States of the world file
     //each line of SOW file covers 100 days of inflow
     for (int i=0; i < nYears; i++){
-      nat_flow[i] = nat_flowmat[index][i]; 
+      nat_flow[i] = nat_flowmat[index][i];
     }
 
     // initialize lake_state
@@ -162,14 +162,14 @@ void lake_problem(double* vars, double* objs, double* constrs)
 
     Y.clear();
   }
-  
+
   objs[0] = -1*vsum(discounted_benefit)/nSamples; // average economic benefit
   objs[1] = vmax(average_annual_P); // max average annual P concentration
   objs[2] = -1*vsum(yrs_inertia_met)/((nYears-1)*nSamples); // average inertia
   objs[3] = -1*vsum(yrs_pCrit_met)/(nYears*nSamples); // average reliability
 
   constrs[0] = max(0.0, reliability_threshold - (-1*objs[3]));
-  
+
   average_annual_P.clear();
   discounted_benefit.clear();
   yrs_inertia_met.clear();
@@ -187,7 +187,7 @@ double RBFpolicy(double lake_state, ublas::vector<double> C, ublas::vector<doubl
   }
 
   Y = min(0.1,max(Y,0.01));
-  
+
   return Y;
 }
 
@@ -199,8 +199,8 @@ bool root_termination(double min, double max) {
   return abs(max - min) <= 0.000001;
 }
 
-int main(int argc, char* argv[]) 
-{  
+int main(int argc, char* argv[])
+{
   // initialize defaults
   b = 0.42;
   q = 2;
@@ -212,16 +212,16 @@ int main(int argc, char* argv[])
 
   for (int i=0;i<10000;i++){   //this is 10,000 to match nat_flowmat's size
     for (int j=0;j<nYears;j++){
-      nat_flowmat[i][j] = 0.0; 
+      nat_flowmat[i][j] = 0.0;
     }
   }
-  
+
   FILE * myfile;
   myfile = fopen("./../SOWs_Type6.txt","r");
-  
+
   int linenum = 0;
   int maxSize = 5000;
-  
+
   if (myfile==NULL){
     perror("Error opening file");
   } else {
@@ -234,15 +234,15 @@ int main(int argc, char* argv[])
         for (int i=0; i <maxSize; i++){
           testbuffer[i] = buffer[i];
         }
-  
+
         for (int cols=0; cols < nYears; cols++){
           nat_flowmat[linenum-1][cols] = strtod(testbuffer, &pEnd);
-          testbuffer  = pEnd; 
-        }       
+          testbuffer  = pEnd;
+        }
       }
     }
   }
-  
+
   fclose(myfile);
 
   // setting random seed

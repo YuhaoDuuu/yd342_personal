@@ -1,0 +1,4 @@
+/Users/duyuhao/Documents/GitHub/yd342_personal/Lake_Problem_DPS/Optimization/DPS/main-lake-DPS.cpp:51:10: fatal error: 'boost/numeric/ublas/io.hpp' file not found
+#include <boost/numeric/ublas/io.hpp>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
