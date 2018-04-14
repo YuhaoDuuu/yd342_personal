@@ -1,6 +1,6 @@
 # 2 Stage Coagulant Addition, Spring 2018
 #### Barbara Oramah, Ching Pang, Yuhao Du
-#### March 1, 2018
+#### April 14, 2018
 
 <div class="alert alert-block alert-danger">
 Why is the title not capitalized?
@@ -30,16 +30,6 @@ Based on the modelling result and bonding mechanism of humic acid, clay and PAC 
 
 
 ## Introduction
-**Grading rubric**
-~~State your theory and hypothesis
-Explain your experiment / process and why you performed this experiment
-Explain why your work is important (Explain the context of your team’s work in AguaClara and the world)
-Rating of 5 (Strong):
-Presents a clear and concise lead-in to the remainder of the report
-Appropriate background information (including references) presented in organized fashion
-Problem is well developed.  Hypotheses, if appropriate, are clearly stated  
-Outline of the remaining report present and easily understandable~~
-
 **the logic**: ~~first give the background of NOM effect on flocculation and point out the problem: NOM reduce flocculation efficiency. then explain why we want to study its effect-want to optimize operation condition. then discuss what we learned in the past research-mainly the model and its result. then develop the hypothesis-two stage can save coagulant. after that our experiment test the particle removal efficiency of both 1stage and 2stage addition. so that we can validate our hypothesis: whether 2stage is more efficient. then out line, in the following report we would break down our experiment, from theoretical basis to apparatus design, then experiment process, finally we would analyze the data we generate and offer some conclusion.~~
 
 Flocculation is among the most applied processes for water and wastewater treatment. Therefore, a thorough understanding of the physical and chemical process in flocculation is critical to the optimization of water treatment process, and so a predictive model to describe the flocculation process is needed.**/(basic definition)** However, the model built in the past research of AguaClara only considered the presence of clay and coagulant in water, and failed to take natural organic matters (NOM) into consideration. Natural organic matters, NOMs, are matters composed of organic compounds from the remains and waste products of organisms such as plants and animals and are ubiquitous in the natural water system. NOMs can be generated within the water source through biological activities, or introduced to the water body via drainage within watersheds, including substances generated during the breakdown of terrestrial organisms (Hudson et al., 2007). The application of flocculation to remove NOM from drinking water supplies is efficient, and helps avoiding the formation of disinfection by products (DBPs).[2](Mika et al.,2018) For processes based on the use of chemicals (e.g. coagulation and oxidation) and materials (e.g. adsorption), the increasing concentrations of NOM require the use of more chemicals or materials (Xu et al., 2016a), which ultimately leads to the generation of more sludge or spent materials. Hence, the effect of NOM on flocculation is crucial in developing flocculation processes that optimize the operating conditions, including the amount of coagulants.**/(general incentives and problem of our research)**
@@ -73,11 +63,8 @@ According to the generated data, two stage coagulant addition need more time to 
 
 ### Literature Review
 
-### Observations and a Geometric Explanation of the Effects of Humic Acid (HA) on Flocculation
-   ~~The thesis gives a clear layout of why we are using HA as the natural organic matter as well as the chemistry behind the creation of flocs. We are using HA as the exemplary compound to represent dissolved NOM because it is the most commonly found form of NOM in our surroundings. Clay is used to represent the colloidal solids. As NOM is easily found in our soil and water, it increases our need of coagulant to promote flocculation of dissolved particles in water.  Hence why in our model of the experiment we add humic acid and clay with the coagulant PaCl (polyaluminium chloride). However, there is a cut-off point as to how much coagulant we can add to the raw water for it to be beneficial in the removal of NOM. This observation shows that some NOM becomes increasingly uncooperative to being removed due to the increased presence of coagulant. Our understanding of the lack of floc formation in the presence of increased coagulant addition is limited, yet it is an area of interest in determining the magnitude of the effect.~~
-
 ### Using PACl as neutralizer and destabilizer
-Coagulation is one of the most effective methods to remove fine substances from water. Polyaluminum Chloride (PAC) was chose to be the coagulants of our researhc, because of its wide range of targets, low sensitivity of temperature and low residual metal-ion concentration. The effect of PACl in removing humic acid was significantly efficient comparing to other chemicals. (Sudoh et. al., 2015)
+Coagulation is one of the most effective methods to remove fine substances from water. Polyaluminum Chloride (PAC) was chose to be the coagulants of our research, because of its wide range of targets, low sensitivity of temperature and low residual metal-ion concentration. The effect of PACl in removing humic acid was significantly efficient comparing to other chemicals. (Sudoh et. al., 2015) Projects have a preference on PAC also because of the economic facter(i.e. low cost and high availability in both solid and liquid form). (Bratby,2006)
 
 Generally coagulants function as neutralizer and destabilizer in the particle removal process. As it shows in Figure 2, originally, the negatively charged solids particles repel each other. As positively-charged coagulant is added to the mixture, they adhere to the negatively charged colloids, neutralizing the charge and destabilizing the particles. With the removal of charge, the destabilized colloids can now adhere to each other, forming microflocs.
 
@@ -115,6 +102,8 @@ This section needs a lot of work for understandability.
 
 
 ### Experiment Process
+HA was used as the representative NOM because it is the most commonly found form of NOM in our surroundings. Kaolin clay is used to represent the colloidal solids.
+
 The concentration of humic acid was fixed while the influent turbidity and coagulant dosage were controlled variable. Thus, the effect of turbidity on particle removal efficiency and the optimal coagulant dosage were tested. Three different value of target influent turbidity were used of 50NTU, 100NTU and 150NTU respectively. The coagulant dosages were varied by the increment function built in ProCoDA. The increment function can increase the coagulant dosage stepwise. When the run time of current state reach the duration we set in ProCoDA the function will be triggered and increase the coagulant pump speed according to the setting. Details about ProCoDA set-up can be found after the main text.
 
 First, a set of one-stage coagulant addition experiments was carried out to find the optimal dosage that could reduce the effluent turbidity of 3 NTU or less, which was a requirement of AguaClara filter system. During the one-stage experiments, the second coagulant pump was turned off. Then, the dosages used in the first set of experiments (one-stage addition) were divided into two parts, where we would find the optimal distribution, at a point where most of the coagulant from the first coagulant pump would be used to absorb the humic acid in the system, and coagulant added by the second pump would lower the turbidity to be able to attach every particle in the system to its surface. Therefore, a T-connection was installed between the two coagulant pumps. This helped to manage the amount of coagulant that was input into the system as the first pump would control the total amount of coagulant being put into the system. When the second coagulant pump was opened, it would be able to control how much coagulant would be used for the second dosage, drain directly from the first valve, so that a fixed dosage of the total amount of coagulant put in could be maintained. This helped to test whether or not having a second dosage of coagulant before the second contact chamber would make the experiment perform better than the total amount of coagulant dosage in one stage.*
@@ -384,6 +373,7 @@ The conslusion in the second paragraph is not supported adequately in your repor
 </div>
 
 ## Future Work
+In the current research of us and other particle removal research teams, the effect of pH has not been considered. However, pH could be the single most important factor affecting the effectiveness of metal-based coagulants(Qin et al., 2006). In the future research, pH definitely has to be measured during the experiment. PH 
 We have encountered several problems: the high pressure within the system, the leak caused by the poor connection. In next few weeks, we would fix those problems and begin to conduct our experiment. After discussed with Monroe, we suspected that the size of our first contact chamber is not enough for the HA and coag nanoparticles in the synthetic water to generate enough successful collision, so recalculation and test on the CC are also required.
 
 <div class="alert alert-block alert-danger">
