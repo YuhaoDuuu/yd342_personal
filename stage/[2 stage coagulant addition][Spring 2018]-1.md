@@ -373,8 +373,13 @@ The conslusion in the second paragraph is not supported adequately in your repor
 </div>
 
 ## Future Work
-In the current research of us and other particle removal research teams, the effect of pH has not been considered. However, pH could be the single most important factor affecting the effectiveness of metal-based coagulants(Qin et al., 2006). In the future research, pH definitely has to be measured during the experiment. PH 
-We have encountered several problems: the high pressure within the system, the leak caused by the poor connection. In next few weeks, we would fix those problems and begin to conduct our experiment. After discussed with Monroe, we suspected that the size of our first contact chamber is not enough for the HA and coag nanoparticles in the synthetic water to generate enough successful collision, so recalculation and test on the CC are also required.
+The current apparatus design is prove to be deficient by the contact chamber group, because those two up-flow contact chambers we applied can not function as what they designed to be. It was proved by experiments that the current design of contact chamber can not necessarily reduce the wall loss of the coagulant and imporve the particle removal efficiency. Although right now we only use the contact chamber as a place for partile collision, and divide the first and second stage addition physically, but it would aid the improvement of particle removal efficiency if in the future we can modify the design of contact chamber. 
+
+In the current research of us and other particle removal research teams, the effect of pH has not been considered. However, pH could be the single most important factor affecting the effectiveness of metal-based coagulants(Qin et al., 2006). In the future research, pH definitely has to be measured during the experiment. Both pH meter or pH test paper can be the option.
+
+The predictive model developed by AguaClara is based on the past apparatus set-up, it can not model the current experiment correctlly, the model result is deviate a lot from the experiment data. Ultimate goal of our group is to revise the model, so that AguaClara water treatment plant can be guided by the up-to-date research findings in the lab.
+
+
 
 <div class="alert alert-block alert-danger">
 Section has sentences that are incomplete.
