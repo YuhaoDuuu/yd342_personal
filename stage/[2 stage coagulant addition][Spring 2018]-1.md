@@ -244,9 +244,15 @@ Run-on sentences make it hard to read. I do not understand this paragraph after 
 
  One assumption was that due to the limit time of data acquisition state(detail explaination of ProCoDA set points can be found after the main text), the system did not have enough time to form the floc blanket. We extend the duration of data acquisition state, from 3600 seconds to 4800 seconds, and finally it was 8000 seconds. According to our observation, dense floc blanket usually formed one hour after the coagulant was added. If there was no floc blanket formed within two hours in a trial, it won't form over time.
 
- ### Impact of surface charge
 
- ### Impact of coagulant dosage
+ As we can see, the effluent turbidiy did not vary a lot even though the increment function worked, after examining the data we found that the coagulant pump actually worked around its lowest speed, and the past research showed that our pump did not work well at that speed. Therefore, for future experiments, we are going to set a higher intercept for the increment function, so the lowest rpm in our experiment now is 39.
+
+### Impact of surface charge
+Due to the limit port in our hardware, our group had to mix the clay and humic acid before pumped them into water. This set-up can have two possible outcomes. If the clay can cover by the humic acid when stirring in the stock tank, there should be a suspension which is easier to remove, because the amount of humic acid is reduced. But according to our observation, suspension with humic acid was harder to be removed than the single clay turbid solution. So here comes the second hypothesis. Both clay and humic acid is negatively charged, while humic acid has a higher charge density. The charge density of clay particles increase after attached by humic acid and they will become more repulsive to each other, thus the clay suspension is more dispersed and harder to be removed. 
+
+
+### Impact of coagulant dosage
+
 ```python
 import numpy as np
 import pandas as pd
@@ -326,9 +332,6 @@ What is going on with these datalogs and the code? Is that a remnant of the temp
 In this plot
 After describing a particular result, within a paragraph, go on to connect your work to fundamental physics/chemistry/statics/fluid mechanics, or whatever field is appropriate. Analyze your results and compare with theoretical expectations; or, if you have not yet done the experiments, describe your expectations based on established knowledge. Include implications of your results. How will your results influence the design of AguaClara plants? If possible provide clear recommendations for design changes that should be adopted. Show your experimental data in a professional way using the following guidelines:
 
-* **Did these results line up with expectations?**
-In this semEster, up to now, we only did several trials of one stage addition. Our expectation for the one stage addItion is that the floc blanket can be found in our sedimentation tank and the effluent go down to a level that is desirable for the AguaClara filtration system. The effluent turbidity in several trials happened to be around 20NTU, we assumed that it was due to the limit time of our data acquisition state, namely, we did not give the system enough time to form the floc blanket, so we extend the duration of that state, from 3600 seconds to 4800.
-
 <div class="alert alert-block alert-danger">
 Why is this formatted in a bulleted list with questions? It should be written in formal paragraphs as a normal research report would contain.
 
@@ -337,13 +340,8 @@ What are thefull results of your several trials completed of one stage addition?
 What does the duration change?
 </div>
 
-
-Due to the limit port in our hardware, our group had to mix the clay and humic acid before pumped them into water. As we can see, the effluent turbidiy did not vary a lot even though the increment function worked, after examining the data we found that the coagulant pump actually worked around its lowest speed, and the past research showed that our pump did not work well at that speed. Therefore, for future experiments, we are going to set a higher intercept for the increment function, so the lowest rpm in our experiment now is 39.
-
-
-
 #### Analysis of One Stage Coagulant addition
-~~In a team discussion with Professor Monroe, we had an intense evaluatation of our current experiments as well as the concerns regarding our calculations.~~ A primary concern throughout this semester was the lack of consistency in the formation of a floc blanket in our Sedtank during 1 Stage addition. It was concluded that due the limitations of ProCoDA, it constrained our team to mix clay and humic acid before it enters into the system. This is different methodology in comparison to other subteams in the Dissolved Species Research.  We hypothesis that due the prior mixing, ~~the humic acid makes the surfaces of the clay more negatively charged.~~ This disperses the clay particles more thus creating more clay particle surface area. This means that there is more clay than there is coagulant available to bind together and create flocs.~~In order to determine whether this hypothesis is true, we have modified our calculations and ratio of humic acid.~~
+A primary concern was the lack of consistency in the formation of a floc blanket in our Sedtank during 1 Stage addition. It was concluded that due the limitations of ProCoDA, it constrained our team to mix clay and humic acid before it enters into the system. We hypothesis that due the prior mixing, ~~the humic acid makes the surfaces of the clay more negatively charged.~~ This disperses the clay particles more thus creating more clay particle surface area. This means that there is more clay than there is coagulant available to bind together and create flocs.~~In order to determine whether this hypothesis is true, we have modified our calculations and ratio of humic acid.~~
 
 
 
