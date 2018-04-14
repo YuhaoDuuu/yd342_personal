@@ -282,102 +282,20 @@ Run-on sentences make it hard to read. I do not understand this paragraph after 
 
 ## Results and Analysis
 
-```python
-import numpy as np
-import pandas as pd
-from matplotlib import pyplot as plt
+### Impact of humic acid on flocculation
+Early in the spring semester, the experiment data of one stage addition experiments didn't align with our expectation and experimental results in the past. Our expectation was that the floc blanket could be found in our sedimentation tank each time we ran because the minimum coagulant dosage we used at that time was 1.5mg/L, which is enough to reduce the effluent turbidity to 15 or less according to the past research. Besides, the ultimate goal of our flocclation and sedimentation system is reducing the water turidity to 5NTU or less, so that the water can be treated by AguaClara filtration system. Based on the past research, the AguaClara filtration system can not effectively treat water with 5NTU or higher turbidity. In some of our trials, the effluent turbidity was range from 70NTU to 80NTU, which suggested that only the tube flocculator contributed to the particle removal. Several possible causes of the failure was raised, and following paragraphs will discuss how we tested them. 
 
-from aide_design import floc_model as floc
-
-from aide_design.units import unit_registry as u
-
-import sys, os
-GitPath = os.path.join('~', 'Documents', 'GitHub')
-myGitHubdir=os.path.expanduser(GitPath)
-sys.path.append(myGitHubdir)
-
-
-k = 0.24
-coag = np.array([0.53, 1.06, 1.59, 2.11, 2.56]) * u.mg/u.L
-conc_humic_acid = np.array([0, 3, 6, 9, 12, 15] * u.mg/u.L)
-# dataset[0] is the 50NTU, dataset[1] is the 100NTU.
-# Within both subgroups, [0] is the pC.0, ranging evenly up to [5] which is the
-# pC.15
-dataset = np.array([[  # Dataset[0]: the 50NTU datasets
-                     [0.634, 0.729, 0.891, 1.062, 1.205],
-                     [0.563, 0.717, 0.903, 1.038, 1.193],
-                     [0.136, 0.513, 0.793, 1.027, 1.095],
-                     [0.109, 0.264, 0.749, 1.002, 1.089],
-                     [0.084, 0.128, 0.647, 0.962, 1.057],
-                     [0.061, 0.094, 0.308, 0.717, 0.928]
-                     ],
-                    [  # Dataset[1]: the 100NTU datasets
-                     [0.746, 0.953, 1.191, 1.295, 1.414],
-                     [0.563, 0.835, 1.085, 1.255, 1.403],
-                     [0.185, 0.692, 0.971, 1.254, 1.390],
-                     [0.105, 0.280, 0.956, 1.238, 1.361],
-                     [0.097, 0.207, 0.740, 1.209, 1.316],
-                     [0.084, 0.157, 0.566, 1.084, 1.314]
-                     ]
-                    ])
-indexnames = ['{0} mg/L'.format(i) for i in np.arange(0,16,3)]
-Data50NTU = pd.DataFrame(dataset[0], index=indexnames).T
-
-Data100NTU = pd.DataFrame(dataset[1], index=indexnames).T
-print(Data50NTU)
-
-coagGraph = np.arange(1 * 10**-4, 25.1 * 10**-4, 1 * 10**-4) * u.kg/u.m**3
-enerDis = 4.833 * u.mW/u.kg
-temperature = 25 * u.degC
-resTime = 302 * u.s
-tubeDiam = 3/8 * u.inch
-# Begin graphing the 50NTU datasets
-plt.figure('50NTU', (6,6))
-plt.title('50 NTU Graph')
-plt.ylabel('pC*')
-plt.xlabel('coagulant dosage (mg/L)')
+One assumption was that due to the limit time of data acquisition state(detail explaination of ProCoDA set points can be found after the main text), the system did not have enough time to form the floc blanket. We extend the duration of data acquisition state, from 3600 seconds to 4800 seconds, and finally it was 8000 seconds. According to our observation, dense floc blanket usually formed one hour after the coagulant was added. If there was no floc blanket formed within two hours in a trial, it won't form over time. 
 
 
 
-plt.plot(coag, Data50NTU['0 mg/L'], 'r.', coag, Data50NTU['3 mg/L'], 'b.',
-         coag, Data50NTU['6 mg/L'], 'g.', coag, Data50NTU['9 mg/L'], 'm.',
-         coag, Data50NTU['12 mg/L'], 'c.', coag, Data50NTU['15 mg/L'], 'y.')
-
- plt.show()
- ```
-
-
- ![datalog](https://github.com/AguaClara/2_stage_coag_addition/blob/master/image/100NTU.png)
-
-                        Figure: model result which guide our experiment
-
- ![datalog](https://github.com/AguaClara/2_stage_coag_addition/blob/master/image/experiment%20data.png)
-
-                        Figure: one of the typical experiment we ran
-<div class="alert alert-block alert-danger">
-What is going on with these datalogs and the code? Is that a remnant of the template? It is unprofessional looking.
-</div>
-
-In this plot
-After describing a particular result, within a paragraph, go on to connect your work to fundamental physics/chemistry/statics/fluid mechanics, or whatever field is appropriate. Analyze your results and compare with theoretical expectations; or, if you have not yet done the experiments, describe your expectations based on established knowledge. Include implications of your results. How will your results influence the design of AguaClara plants? If possible provide clear recommendations for design changes that should be adopted. Show your experimental data in a professional way using the following guidelines:
-
-* **Did these results line up with expectations?**
-In this semster, up to now, we only did several trials of one stage addition. Our expectation for the one stage addtion is that the floc blanket can be found in our sedimentation tank and the effluent go down to a level that is desirable for the AguaClara filtration system. The effluent turbidity in several trials happened to be around 20NTU, we assumed that it was due to the limit time of our data acquisition state, namely, we did not give the system enough time to form the floc blanket, so we extend the duration of that state, from 3600 seconds to 4800.
-
-<div class="alert alert-block alert-danger">
-Why is this formatted in a bulleted list with questions? It should be written in formal paragraphs as a normal research report would contain.
-
-What are thefull results of your several trials completed of one stage addition? Are there any graphs? Any preliminary findings?
-
-What does the duration change?
-</div>
-
-* **What went wrong?**
 As we can see, the effluent turbidiy did not vary a lot even though the increment function worked, after examining the data we found that the coagulant pump actually worked around its lowest speed, and the past research showed that our pump did not work well at that speed. Therefore, for future experiments, we are going to set a higher intercept for the increment function, so the lowest rpm in our experiment now is 12.
 
-<div class="alert alert-block alert-danger">
-I get that pump speed is an issue here but I don't know why. What determined the rpms of your pumps? Why is 20 NTU a bad result?
+### Impact of surface charge
 
+### Impact of coagulant dosage
+<div class="alert alert-block alert-danger">
+Why is this formatted in a bulleted list with questions? It should be written in formal paragraphs as a normal research report would contain.What are thefull results of your several trials completed of one stage addition? Are there any graphs? Any preliminary findings?What does the duration change?I get that pump speed is an issue here but I don't know why. What determined the rpms of your pumps? Why is 20 NTU a bad result?
 This sections needs much more development and polishing.
 </div>
 
