@@ -124,11 +124,7 @@ I am having a hard time visualizing the T-connection between the coag pumps and 
 </div>
 
 ### Experimental Apparatus Design
-The design of apparatus was based on the research of our subteam last semester.
-
-ProCoDA (Process Control and Data Acquisition) software was used to automate data collection and control the experimental apparatus. Two upflow contact chambers are set before the fluid enters the flocculator, so that the coagulants are allowed more time and space to collide with particles in water. During the first stage of addition, coagulants collide and then are covered by humic acid in the first contact chamber. Originally, the pump was designed to input the correct coagulant dosage before each contact chamber, allowing the two stage coagulant addition. But due to the limitation of ProCoDA, which can only control a maximum of two pumps at the same time, one of the two coagulant pumps had to be controlled manually. In order to achieve the effect of two-stage addition, under the modified design, the coagulant for the second pump was drained from the first coagulant pump. (more details followed)
-
-
+ProCoDA (Process Control and Data Acquisition) software was used to automate data collection and control the experimental apparatus. Two up-flow contact chambers are set before the fluid enters the flocculator, so that the coagulants are allowed more time and space to collide with particles in water. During the first stage of addition, coagulants collide and they are covered by humic acid in the first contact chamber. Originally, the pump was designed to input the correct coagulant dosage before each contact chamber, allowing the two-stage coagulant addition. But due to the limit port of ProCoDA, we can only control a maximum of two pumps at the same time, one of the two coagulant pumps had to be controlled manually.
 
 <div class="alert alert-block alert-danger">
 First sentence is a run-on. Do not include "should" in that sentence because there either are or are not.
@@ -138,11 +134,7 @@ I don't fully understand what's going on with the second pump draining from the 
 Define ProCoDA
 </div>
 
-### Experimental Apparatus
-
-The apparatus set-up developed in last semester was generally kept at present. The contact chamber was reversed from down-flow to up-flow so that the air in the system can be pushed out. Due to the limit bench area, there was simplifications in our apparatus set-up, but it did reflect the nature of the AguaClara water treatment plant. The sedimentation tube in our system had those key structure of AguaClara water treatment plant, including the floc weir, floc settler, floc blanket and sludge valve. Furthre detail about the design of sedimentation tube can refer to the research of High Rate Sedimentation group in AguaClara. A tube flocculator was used in this research because it can be idealized as a high-Péclet-number reactor much like a baffled hydraulic flocculator and also because the average velocity gradient in laminar tube flow is well defined (Weber-Shirk and Lion 2010).
-
-The ProCoDA system can only control two pumps, and one of the coagulant pump had to be connected to the system, so we could not add humic acid and clay separately like some of other groups in the lab.
+The apparatus set-up developed in last semester was kept at present. The contact chamber was reversed from down-flow to up-flow so that the air in the system can be pushed out. Due to the limit bench area, there were simplifications in our apparatus set-up, but it did reflect the nature of the AguaClara water treatment plant. The sedimentation tube in our system had those fundamental structures of AguaClara water treatment plant, including the floc weir, floc settler, floc blanket and sludge valve. Further detail about the design of sedimentation tube can refer to the research of High Rate Sedimentation group in AguaClara. A tube flocculator was used in this research because it can be idealized as a high-Péclet-number reactor much like a baffled hydraulic flocculator and also because the average velocity gradient in laminar tube flow is well defined (Weber-Shirk and Lion 2010).
 
 <div class="alert alert-block alert-danger">
 Any calculations?
@@ -160,22 +152,11 @@ Consider a clearer way to present this information
    What does CC stand for?
    </div>
 
-The apparatus worked as following description, to start with, clay, humic acid and water were added according to the calculation, into a 10L stock tank with a stirrer. This stock tank was connected to the clay pump, the pump speed would be control by ProCoDA system to maintain a relatively fixed influent turbidity. After that, mixture of humic acid and clay went through the first turbidity meter and influent turbidity of the raw water is measured. Following this, the first stream of coagulant was added right before the fluid entered the first contact chamber. The second stream of coagulant was pumped into the system after the first contact chamber if we were running a two staged addition experiment.
+ProCoDA can only control two pumps, and one of the coagulant pumps had to be connected to the system. Thus humic acid and clay cannot add into the system under the control of two independent pumps. Our apparatus worked as the following description, to start with, clay, humic acid and water were added according to the calculation, into a 10L stock tank with a stirrer. This stock tank was connected to the clay pump. The pump speed would be control by ProCoDA system to maintain a relatively fixed influent turbidity. After that, a mixture of humic acid and clay went through the first turbidity meter, and influent turbidity of the raw water is measured. Following this, the first stream of coagulant was added right before the fluid entered the first contact chamber. The second stream of coagulant was pumped into the system after the first contact chamber if we were running a two-stage addition experiment.
 
 <div class="alert alert-block alert-danger">
-"The way in which the apparatus worked was the following" is both an incomplete sentence and too fluffy. Instead say how the apparatus worked in that first sentence.What calculation?Do you mean stirrer?How did you determine the pump speed for the fixed turbidity?What was that turbidity?Can the results from one experiment with a certain fixed turbidity be generalize for many tubridity levels?Turbidimeters not turbidity TurbidimetersChoose between is and was - have to keep tenses consistent.
+"The way in which the apparatus worked was the following" is both an incomplete sentence and too fluffy. Instead say how the apparatus worked in that first sentence.What calculation?Do you mean stirrer?How did you determine the pump speed for the fixed turbidity?What was that turbidity?Can the results from one experiment with a certain fixed turbidity be generalize for many tubridity levels?Turbidimeters not turbidity TurbidimetersChoose between is and was - have to keep tenses consistent.More run-on sentences and incorrect verb usage.The end of this paragraph is a better description of how the two stage dosing worked.
 </div>
-
-
-In a two-stage addition experiment, while the first pump was providing the same dosage as before, the second pump would subtract from that the amount required for the second dosage addition.
-
-<div class="alert alert-block alert-danger">
-More run-on sentences and incorrect verb usage.
-
-The end of this paragraph is a better description of how the two stage dosing worked.
-</div>
-
-Then, the mixture continued on to the second chamber. This can be seen in the following image.
 
 * Image
 
@@ -193,43 +174,24 @@ Figure 4: Current Apparatus Set-up
 Figure number? Why don't you include this farther up?
 </div>
 
-Our group have been striving to fabricate a perfect system without any leak. However, many parts we used in apparatus set-up is processed by ourself, such as cutting, drilling, and tube connection. So it required us to keep monitoring the behavior of our apparatus, and fix the problem whenever it occurs.
-
-
+Our group have been striving to fabricate a perfect system without any leak. However, many parts we used in apparatus set-up is processed by ourself, such as cutting, drilling, and tube connection. So it required a frequent monitoring on the apparatus, and fix the problem whenever it occurs.
 
 <div class="alert alert-block alert-danger">
 
 Are the current simplifications justified? Is the data you are getting reliable?
 </div>
 
-### Procedure
-For one stage addition experiment, in every single circulation, the coag dosage is 1.1-2.6mg/L, which was increased 7 times by using the increment function, a function built in . Two more data point was added on the basis of past experiment, one between 1-1.5mg/L, and the other between 1.5-2.0mg/L, because it was found that desirable effluent turbidity usually generated around that range of coagulant concentration. Besides, according to the previous data, 0.5mg/L and 1mg/L coagulant is insufficient to effectively reduce the turbidity of the synthetic water.
+### Experiment operation
+Two-stage coagulant addition experiment should base on the data generated in one stage addition experiment, the total coagulant dosage is the optimal amount found in one stage addition experiments.  and then we add two more circulations for comparison, vary the total amount, +-0.5 on the basis of the first trial. When conducting two-stage addition experiment, the effect of humic acid concentration on flocculation would not be test, humic acid concentration of the synthetic water is fixed.
+
+During March, for one stage addition experiment, in every single circulation of the increment function, the coag dosage was range from 1.1 to 2.6 mg/L, the dosage was increased seven times over time under the control of ProCoDA. It was found that desirable effluent turbidity usually generated around 1.5 mg/L coagulant concentration according to Du's research(Du, 2017). Besides, in the previous experiment, 0.5mg/L and 1mg/L coagulant were proved to be insufficient to reduce the turbidity of synthetic water efficiently. By applying different humic acid concentration between separate trials with same coagulant dosage, the impact of both humic acid on flocculation process can be tested.
+
+In April, the humic acid concentration used in the experiment was decreased to guarantee the formation of floc blanket in every trial. Synthetic water without humic acid was used in research to compare with HA and clay synthetic water. By doing so, we can study the effect of humic acid on the distance between clay particles. Our group conducted series of control experiment for two stages addition, aiming at discovering the most effective ratio of coagulant allocation between the first and second stage. In the future, after generating enough data, the overall particle removal efficiency of one-stage and two-stage addition will be compared.
 
 <div class="alert alert-block alert-danger">
 coag is informal, use coagulant Insteadput a space between values and their unit_registryDo not use colons in the middle of sentences - does not make senseWhy are you redifining who Yingda is again?Include units on every numberWhat is the increment function?Unclear what the last sentence means
 </div>
 
-We are planning to run 3 circulations per week, which will take 3 days, and we will use different humic acid between those 3 different trials within a week. Thus we can test the impact of both humic acid and coagulant dosage on the flocculating process.
-
-We will carry on series of control experiment for 2 stages addition, and find the most effective portion of coagulant allocation. Then we will compare with data generated from 1 stage experiment.
-
-<div class="alert alert-block alert-danger">
-Does each circulation take three days?
-
-What do you mean by "circulation"?
-
-How will this allow you to test the impact of both humic acis and coagulant dosing on flocculating process?
-
-How do you do the control experiment?
-
-It is unclear to me what past teams have done and what you are doing.
-</div>
-
-Two-stage coagulant addition experiment should base on the data generated in one stage addition experiment, the total coagulant dosage is the optimal amount found in one stage addition experiments.  and then we add two more circulations for comparison, vary the total amount, +-0.5 on the basis of the first trial. When conducting two-stage addition experiment, the effect of humic acid concentration on flocculation would not be test, humic acid concentration of the synthetic water is fixed.
-
-<div class="alert alert-block alert-danger">
-Run-on sentences make it hard to read. I do not understand this paragraph after reading it twice.
-</div>
 
 ## Results and Analysis
 ### Impact of humic acid on flocculation
