@@ -140,7 +140,8 @@ Define ProCoDA
 
 ### Experimental Apparatus
 
-* Design (calculations, constraints)
+The apparatus set-up developed in last semester was generally kept at present. The contact chamber was reversed from down-flow to up-flow so that the air in the system can be pushed out. Due to the limit bench area, there was simplifications in our apparatus set-up, but it did reflect the nature of the AguaClara water treatment plant. The sedimentation tube in our system had those key structure of AguaClara water treatment plant, including the floc weir, floc settler, floc blanket and sludge valve. Furthre detail about the design of sedimentation tube can refer to the research of High Rate Sedimentation group in AguaClara. A tube flocculator was used in this research because it can be idealized as a high-Péclet-number reactor much like a baffled hydraulic flocculator and also because the average velocity gradient in laminar tube flow is well defined (Weber-Shirk and Lion 2010).
+
 The ProCoDA system can only control two pumps, and one of the coagulant pump had to be connected to the system, so we could not add humic acid and clay separately like some of other groups in the lab.
 
 <div class="alert alert-block alert-danger">
@@ -192,16 +193,9 @@ Figure 4: Current Apparatus Set-up
 Figure number? Why don't you include this farther up?
 </div>
 
-* Complications in construction
- It is kind of hard to make a perfect system without any leak, because many parts we used in apparatus fabrication is processed by ourself, for example the cut and the drilling, also the "tube stretch". So it required us to keep monitoring the behavior of our apparatus, and fix the problem whenever it occurs.
+Our group have been striving to fabricate a perfect system without any leak. However, many parts we used in apparatus set-up is processed by ourself, such as cutting, drilling, and tube connection. So it required us to keep monitoring the behavior of our apparatus, and fix the problem whenever it occurs.
 
- <div class="alert alert-block alert-danger">
- Why start bulleted list here?
 
- What is "tube stretch"
- </div>
-
-The apparatus set-up developed in last semester was generally kept at present. The contact chamber was reversed from down-flow to up-flow so that the air in the system can be pushed out. Due to the limit bench area, there was simplifications in our apparatus set-up, but it did reflect the nature of the AguaClara water treatment plant. The sedimentation tube in our system had those key structure of AguaClara water treatment plant, including the floc weir, floc settler, floc blanket and sludge valve. Furthre detail about the design of sedimentation tube can refer to the research of High Rate Sedimentation group in AguaClara. A tube flocculator was used in this research because it can be idealized as a high-Péclet-number reactor much like a baffled hydraulic flocculator and also because the average velocity gradient in laminar tube flow is well defined (Weber-Shirk and Lion 2010).
 
 <div class="alert alert-block alert-danger">
 
