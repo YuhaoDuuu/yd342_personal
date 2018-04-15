@@ -232,7 +232,7 @@ How do you do the control experiment?
 It is unclear to me what past teams have done and what you are doing.
 </div>
 
-Two-stage coagulant addition experiment should base on the data we generate with one stage addition experiment, the total amount coag addition can be the least dosage which can achieve the effluent requirement, and then we add two more circulations for comparison, vary the total amount, +-0.5 on the basis of the first trial. During those weeks we conduct two stages addition, we won’t test the effect of humic acid on flocculation because the mechanism of this part should be similar between one and two stage.
+Two-stage coagulant addition experiment should base on the data generated in one stage addition experiment, the total coagulant dosage is the optimal amount found in one stage addition experiments.  and then we add two more circulations for comparison, vary the total amount, +-0.5 on the basis of the first trial. When conducting two-stage addition experiment, the effect of humic acid concentration on flocculation would not be test, humic acid concentration of the synthetic water is fixed.
 
 <div class="alert alert-block alert-danger">
 Run-on sentences make it hard to read. I do not understand this paragraph after reading it twice.
@@ -252,72 +252,7 @@ Due to the limit port in our hardware, our group had to mix the clay and humic a
 
 
 ### Impact of coagulant dosage
-Regarding the effect of coagulants dosage, determining the optimal amount is crutial. Overdosing the coagulant would result in a substantial increase in the amount of generated sludge and a decrease in pH, while a lower dose is generally the cause for the residual metal remaining in treated water(Ibrahim and Aziz, 2014).
-
-
-```python
-import numpy as np
-import pandas as pd
-from matplotlib import pyplot as plt
-
-from aide_design import floc_model as floc
-
-from aide_design.units import unit_registry as u
-
-import sys, os
-GitPath = os.path.join('~', 'Documents', 'GitHub')
-myGitHubdir=os.path.expanduser(GitPath)
-sys.path.append(myGitHubdir)
-
-
-k = 0.24
-coag = np.array([0.53, 1.06, 1.59, 2.11, 2.56]) * u.mg/u.L
-conc_humic_acid = np.array([0, 3, 6, 9, 12, 15] * u.mg/u.L)
-# dataset[0] is the 50NTU, dataset[1] is the 100NTU.
-# Within both subgroups, [0] is the pC.0, ranging evenly up to [5] which is the
-# pC.15
-dataset = np.array([[  # Dataset[0]: the 50NTU datasets
-                     [0.634, 0.729, 0.891, 1.062, 1.205],
-                     [0.563, 0.717, 0.903, 1.038, 1.193],
-                     [0.136, 0.513, 0.793, 1.027, 1.095],
-                     [0.109, 0.264, 0.749, 1.002, 1.089],
-                     [0.084, 0.128, 0.647, 0.962, 1.057],
-                     [0.061, 0.094, 0.308, 0.717, 0.928]
-                     ],
-                    [  # Dataset[1]: the 100NTU datasets
-                     [0.746, 0.953, 1.191, 1.295, 1.414],
-                     [0.563, 0.835, 1.085, 1.255, 1.403],
-                     [0.185, 0.692, 0.971, 1.254, 1.390],
-                     [0.105, 0.280, 0.956, 1.238, 1.361],
-                     [0.097, 0.207, 0.740, 1.209, 1.316],
-                     [0.084, 0.157, 0.566, 1.084, 1.314]
-                     ]
-                    ])
-indexnames = ['{0} mg/L'.format(i) for i in np.arange(0,16,3)]
-Data50NTU = pd.DataFrame(dataset[0], index=indexnames).T
-
-Data100NTU = pd.DataFrame(dataset[1], index=indexnames).T
-print(Data50NTU)
-
-coagGraph = np.arange(1 * 10**-4, 25.1 * 10**-4, 1 * 10**-4) * u.kg/u.m**3
-enerDis = 4.833 * u.mW/u.kg
-temperature = 25 * u.degC
-resTime = 302 * u.s
-tubeDiam = 3/8 * u.inch
-# Begin graphing the 50NTU datasets
-plt.figure('50NTU', (6,6))
-plt.title('50 NTU Graph')
-plt.ylabel('pC*')
-plt.xlabel('coagulant dosage (mg/L)')
-
-
-
-plt.plot(coag, Data50NTU['0 mg/L'], 'r.', coag, Data50NTU['3 mg/L'], 'b.',
-         coag, Data50NTU['6 mg/L'], 'g.', coag, Data50NTU['9 mg/L'], 'm.',
-         coag, Data50NTU['12 mg/L'], 'c.', coag, Data50NTU['15 mg/L'], 'y.')
-
- plt.show()
- ```
+Regarding the effect of coagulants dosage, determining the optimal amount is crutial. Overdosing the coagulant would result in a substantial increase in the amount of generated sludge and a decrease in pH, while a lower dose is generally the cause for the residual metal remaining in treated water(Ibrahim and Aziz, 2014). Increasing the alum dose has been shown to increase NOM removal up to a certain point; however, NOM removal is not significantly improved when adding very high alum dosages, which suggests that some components of NOM are recalcitrant to being removed by coagulant.
 
 
  ![datalog](https://github.com/AguaClara/2_stage_coag_addition/blob/master/image/100NTU.png)
@@ -389,19 +324,21 @@ How do you design the contact chambers?
 </div>
 
 ## Bibliography
-Logan, B. E., Hermanowicz, S. W., & Parker,A. S. (1987). A Fundamental Model for Trickling Filter Process Design. Journal (Water Pollution Control Federation), 59(12), 1029–1042.
-
 Du, Yingda. 2017. “Observations and a Geometric Explanation of the Effects of Humic Acid on Flocculation.” Cornell University.
-
-Liu, Ting et al. 2011. “Effect of Two-Stage Coagulant Addition on Coagulation-Ultrafiltration Process for Treatment of Humic-Rich Water.” Water Research 45(14): 4260–68.
-
-Sudoh, Ryou et al. 2015. “Removal of Dissolved Humic Acid from Water by Coagulation Method Using Polyaluminum Chloride (PAC) with Calcium Carbonate as Neutralizer and Coagulant Aid.” Journal of Environmental Chemical Engineering 3(2): 770–74.
-
-Xu, Y., Chen, T., Liu, Z., Zhu, S., Cui, F., Shi, W., 2016. The impact of recycling alum- humic-floc (AHF) on the removal of natural organic materials (NOM): behavior of coagulation and adsorption. Chem. Eng. J. 284, 1049e1057.
 
 Hudson, N., Baker, A., Reynolds, D., 2007. Fluorescence analysis of dissolved organic matter in natural, waste and polluted waters - a review. River Res. Appl. 23, 631e649.
 
 Knauer, K., Homazava, N., Junghans, M., Werner, I., 2017. The influence of particles on bioavailability and toxicity of pesticides in surface water. Integr. Environ. Assess. Manage. 13, 585e600.
+
+Liu, Ting et al. 2011. “Effect of Two-Stage Coagulant Addition on Coagulation-Ultrafiltration Process for Treatment of Humic-Rich Water.” Water Research 45(14): 4260–68.
+
+Logan, B. E., Hermanowicz, S. W., & Parker,A. S. (1987). A Fundamental Model for Trickling Filter Process Design. Journal (Water Pollution Control Federation), 59(12), 1029–1042.
+
+Qin, J.J., Oo, M.H., Kekre, K.A., Knops, F., Miller, P., 2006. Impact of coagulation pH on enhanced removal of natural organic matter in treatment of reservoir water. Sep. Purif. Technol. 49, 295e298.
+
+Sudoh, Ryou et al. 2015. “Removal of Dissolved Humic Acid from Water by Coagulation Method Using Polyaluminum Chloride (PAC) with Calcium Carbonate as Neutralizer and Coagulant Aid.” Journal of Environmental Chemical Engineering 3(2): 770–74.
+
+Xu, Y., Chen, T., Liu, Z., Zhu, S., Cui, F., Shi, W., 2016. The impact of recycling alum- humic-floc (AHF) on the removal of natural organic materials (NOM): behavior of coagulation and adsorption. Chem. Eng. J. 284, 1049e1057.
 
 <div class="alert alert-block alert-danger">
 What/Where are your sources? (including Yingda's thesis)
@@ -539,6 +476,7 @@ Good checklist
  $F$: force
  $u$, $w$: x-velocity, z-velocity components
 
+### Chemical dosage and pump speed calculation
  ```python
  # build the environment
 import numpy as np
@@ -621,6 +559,72 @@ Need better commenting
 
 Is this all of the code necessary? yes
 </div>
+
+# Floc model
+
+```python
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+
+from aide_design import floc_model as floc
+
+from aide_design.units import unit_registry as u
+
+import sys, os
+GitPath = os.path.join('~', 'Documents', 'GitHub')
+myGitHubdir=os.path.expanduser(GitPath)
+sys.path.append(myGitHubdir)
+
+
+k = 0.24
+coag = np.array([0.53, 1.06, 1.59, 2.11, 2.56]) * u.mg/u.L
+conc_humic_acid = np.array([0, 3, 6, 9, 12, 15] * u.mg/u.L)
+# dataset[0] is the 50NTU, dataset[1] is the 100NTU.
+# Within both subgroups, [0] is the pC.0, ranging evenly up to [5] which is the
+# pC.15
+dataset = np.array([[  # Dataset[0]: the 50NTU datasets
+                     [0.634, 0.729, 0.891, 1.062, 1.205],
+                     [0.563, 0.717, 0.903, 1.038, 1.193],
+                     [0.136, 0.513, 0.793, 1.027, 1.095],
+                     [0.109, 0.264, 0.749, 1.002, 1.089],
+                     [0.084, 0.128, 0.647, 0.962, 1.057],
+                     [0.061, 0.094, 0.308, 0.717, 0.928]
+                     ],
+                    [  # Dataset[1]: the 100NTU datasets
+                     [0.746, 0.953, 1.191, 1.295, 1.414],
+                     [0.563, 0.835, 1.085, 1.255, 1.403],
+                     [0.185, 0.692, 0.971, 1.254, 1.390],
+                     [0.105, 0.280, 0.956, 1.238, 1.361],
+                     [0.097, 0.207, 0.740, 1.209, 1.316],
+                     [0.084, 0.157, 0.566, 1.084, 1.314]
+                     ]
+                    ])
+indexnames = ['{0} mg/L'.format(i) for i in np.arange(0,16,3)]
+Data50NTU = pd.DataFrame(dataset[0], index=indexnames).T
+
+Data100NTU = pd.DataFrame(dataset[1], index=indexnames).T
+print(Data50NTU)
+
+coagGraph = np.arange(1 * 10**-4, 25.1 * 10**-4, 1 * 10**-4) * u.kg/u.m**3
+enerDis = 4.833 * u.mW/u.kg
+temperature = 25 * u.degC
+resTime = 302 * u.s
+tubeDiam = 3/8 * u.inch
+# Begin graphing the 50NTU datasets
+plt.figure('50NTU', (6,6))
+plt.title('50 NTU Graph')
+plt.ylabel('pC*')
+plt.xlabel('coagulant dosage (mg/L)')
+
+
+
+plt.plot(coag, Data50NTU['0 mg/L'], 'r.', coag, Data50NTU['3 mg/L'], 'b.',
+         coag, Data50NTU['6 mg/L'], 'g.', coag, Data50NTU['9 mg/L'], 'm.',
+         coag, Data50NTU['12 mg/L'], 'c.', coag, Data50NTU['15 mg/L'], 'y.')
+
+ plt.show()
+ ```
 
 ```python
 # To convert the document from markdown to pdf
