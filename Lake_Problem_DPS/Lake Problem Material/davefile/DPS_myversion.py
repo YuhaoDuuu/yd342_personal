@@ -65,7 +65,7 @@ nvars = 3*n
 nobjs = 4
 nYears = 100
 nSamples = 100
-nSeeds = 10
+nSeeds = 1
 nconstrs = 1
 
 #Set Thresholds
